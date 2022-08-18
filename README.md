@@ -1,24 +1,13 @@
 # ynufes-tokiwa22-preview
+22常盤祭プレビューサイト作成用のレポジトリです。
 
-## Project setup
+
+## コマンド系
+### プロジェクトのセットアップ
 ```
 yarn install
 ```
-
-### Compiles and hot-reloads for development
+### 開発用サーバーの立ち上げ
 ```
 yarn serve
 ```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
