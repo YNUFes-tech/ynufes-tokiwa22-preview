@@ -10,12 +10,12 @@ const routes = [
         component: FormView
     },
     {
-        path: '/eventList',
+        path: '/event-list',
         name: 'EventListView',
         component: EventListView
     },
     {
-        path: '/eventDetail',
+        path: '/event-detail',
         name: 'EventDetailView',
         component: EventDetailView
     }

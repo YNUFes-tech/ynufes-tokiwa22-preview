@@ -1,8 +1,8 @@
 <template>
   <nav>
-    <router-link to="/">データ入力ページ</router-link>
-    <router-link to="/eventList">一覧ページ</router-link> |
-    <router-link to="/eventDetail">詳細ページ</router-link>
+    <router-link to="/">データ入力ページ</router-link> |
+    <router-link to="/event-list">一覧ページ</router-link> |
+    <router-link to="/event-detail">詳細ページ</router-link>
   </nav>
   <router-view/>
 </template>
