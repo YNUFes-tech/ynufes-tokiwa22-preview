@@ -18,8 +18,14 @@ export default createStore({
       sns_website: '',
     }
   },
-  getters: {},
-  mutations: {},
+  getters: {
+    entities: (state) => state.entities
+  },
+  mutations: {
+    update(state, entities) {
+      state.entities = entities;
+    }
+  },
   actions: {},
   modules: {}
 })
