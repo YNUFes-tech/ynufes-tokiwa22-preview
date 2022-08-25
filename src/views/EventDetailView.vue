@@ -60,20 +60,19 @@ const eventData = {
   background-image: url("/public/background.png");
   background-size: cover;
   background-attachment: fixed;
+  overflow: hidden;
 
   align-items: center;
-  margin: 0 auto;;
-
+  padding: 0 3rem;
   color: white;
 }
 
 .event-detail {
   display: flex;
   flex-direction: column;
-  width: 80%;
   margin: 0 auto;
-  max-width: 800px;
-  padding: 5rem;
+  max-width: 50rem;
+  padding: 5rem 0;
   background-size: contain;
 }
 
