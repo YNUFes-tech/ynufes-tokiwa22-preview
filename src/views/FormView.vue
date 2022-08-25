@@ -45,6 +45,5 @@ export default {
   flex-direction: column;
   align-items: center;
   margin: 0 auto;;
-  background: #2c3e50;
 }
 </style>
