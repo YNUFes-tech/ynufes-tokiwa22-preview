@@ -19,7 +19,7 @@ const eventData = {
 </script>
 <template>
   <div class="root-wrapper">
-    <div class="event-detail">
+    <div class="event-detail fade-up">
       <div class="event-detail-title">
         <div class="org-name">
           {{ eventData.org_name }}
@@ -106,10 +106,7 @@ p::first-letter {
   font-size: 38px;
 }
 
-.content {
-  color: white;
-  margin: 300px;
-  text-align: left;
+.fade-up {
   animation-name:fadeUpAnime;
   animation-duration:0.5s;
   animation-fill-mode:forwards;
