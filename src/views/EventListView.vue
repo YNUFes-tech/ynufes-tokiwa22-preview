@@ -301,13 +301,6 @@ const eventPlace = {
   }
 }
 
-//COMMON_SCSS_STARTS_HERE
-.wrapper {
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
 .body {
   margin: 0;
   padding: 0;
@@ -322,15 +315,6 @@ const eventPlace = {
   z-index: -10;
 }
 
-.hover-to-shrink {
-  //animation-delay: 0.02s;
-  transition: all 0.1s linear;
-}
-
-.hover-to-shrink:hover {
-  transform: scale(0.9);
-}
-
 .body-frame {
   font-family: 'Klee One', cursive;
   position: relative;
@@ -341,48 +325,19 @@ const eventPlace = {
   overflow: clip;
   min-height: calc(100vh - 360px);
   box-sizing: border-box;
-  padding-bottom: 220px;
-
-  * {
-    z-index: 10;
-  }
 
   .content-frame {
     width: 100%;
     box-sizing: border-box;
     display: flex;
-
     flex-direction: column;
     align-items: center;
     min-height: calc(100vh - 140px - 220px);
   }
 }
-
-.hover-underline-animation {
-  display: inline-block;
-  position: relative;
-}
-
-.hover-underline-animation:after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: 20%;
-  left: 0;
-  background-color: white;
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
-}
-
-.hover-underline-animation:hover:after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-
+/*ここからフッター*/
 footer {
-  position: relative; /*←絶対位置*/
+  position: relative;
   bottom: 0;
   display: flex;
   flex-direction: column;
@@ -514,108 +469,4 @@ footer {
     flex-basis: auto;
   }
 }
-
-/* COMMON AREA ENDS HERE */
-.icon_title_block {
-  display: flex;
-  flex-direction: row;
-
-  .icon_area {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-content: center;
-  }
-
-  .icon {
-    width: 15rem;
-    height: auto;
-    object-fit: contain;
-    border-radius: 1rem;
-  }
-
-  .space_between_icon_title {
-    width: 2rem;
-  }
-
-  @media screen and (max-width: 768px) {
-    flex-direction: column;
-    justify-content: center;
-    .space_between_icon_title {
-      display: none;
-    }
-  }
-}
-
-.title_block {
-  margin-top: 10px;
-
-  .title {
-    font-size: 3rem;
-    margin: 0;
-    padding: 0;
-    min-height: 3rem;
-    @media screen and (max-width: 768px) {
-      font-size: 2rem;
-    }
-    right: 0;
-  }
-
-  .organization_name {
-    font-size: 1.5rem;
-  }
-
-  .tag_frame {
-    display: flex;
-    flex-wrap: wrap;
-    font-size: 1rem;
-    gap: 5px 5px;
-    box-sizing: border-box;
-
-    .tag {
-      box-sizing: border-box;
-      display: flex;
-      justify-content: center;
-      align-content: center;
-      height: 2rem;
-      padding: 0.2rem 0.7rem;
-      border-radius: 20px;
-      background: #99999999;
-
-      p {
-        padding: 0;
-        margin: auto;
-      }
-    }
-  }
-}
-
-
-.detail_block {
-  h1 {
-    width: 100%;
-  }
-
-  white-space: pre-wrap;
-  box-sizing: border-box;
-  width: 100%;
-  font-size: large;
-}
-
-
-.content-block {
-  box-sizing: border-box;
-  width: 100%;
-  max-width: 60rem;
-  display: flex;
-  flex-direction: column;
-  background: #f2f2f288;
-  padding: 5rem 5rem;
-  margin: 1rem;
-  border-radius: 0.4rem;
-  @media screen and (max-width: 768px) {
-    padding: 0.5rem 0.5rem;
-  }
-}
-
 </style>
