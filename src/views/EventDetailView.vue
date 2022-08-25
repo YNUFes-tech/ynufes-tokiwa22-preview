@@ -41,6 +41,12 @@ const eventData = {
           </p>
         </div>
       </div>
+      <div class="org-detail-description">
+        <h2>団体説明</h2>
+        <p>
+          {{ eventData.org_description }}
+        </p>
+      </div>
     </div>
   </div>
 </template>
@@ -81,20 +87,22 @@ const eventData = {
   font-size: 2.5rem;
 }
 
-.event-detail-description {
-  display: flex;
-  align-items: flex-start;
+p {
   letter-spacing: 5px;
   line-height: 2;
   text-align: left;
 }
 
+.event-detail-description {
+  display: flex;
+  align-items: flex-start;
+  padding-bottom: 100px;
+  padding-top: 50px;
+}
+
 @media screen and (max-width: 700px) {
   .event-detail-description {
     display: block;
-    letter-spacing: 5px;
-    line-height: 2;
-    text-align: left;
   }
   .event-icon {
     display: flex;
