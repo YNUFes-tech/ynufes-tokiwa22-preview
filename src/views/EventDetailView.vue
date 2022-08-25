@@ -87,6 +87,9 @@ const eventData = {
   display: flex;
   border-radius: 5px;
   align-items: flex-start;
+  letter-spacing: 5px;
+  line-height: 2;
+  text-align: left;
 }
 
 .event-icon  > img{
