@@ -19,7 +19,6 @@ const eventData = {
 </script>
 <template>
   <div class="root-wrapper">
-
     <div class="event-detail">
       <div class="event-detail-title">
         <div class="kikakudanntaimei">
@@ -43,7 +42,6 @@ const eventData = {
         </div>
       </div>
     </div>
-
   </div>
 </template>
 
@@ -51,6 +49,11 @@ const eventData = {
 .root-wrapper {
   display: flex;
   flex-direction: column;
+
+  background-image: url("/public/background.png");
+  background-size: cover;
+  background-attachment: fixed;
+
   align-items: center;
   margin: 0 auto;;
 }
@@ -99,4 +102,27 @@ const eventData = {
 p::first-letter {
   font-size: 38px;
 }
+
+.content {
+  color: white;
+  margin: 300px;
+  text-align: left;
+  animation-name:fadeUpAnime;
+  animation-duration:0.5s;
+  animation-fill-mode:forwards;
+  opacity:0;
+}
+
+@keyframes fadeUpAnime{
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 </style>
