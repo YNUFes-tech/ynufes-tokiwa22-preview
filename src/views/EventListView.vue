@@ -239,37 +239,39 @@ const eventPlace = {
         border-color: #ffffff99 ;
       }
       > .event_place_text_toshi{
-        background-color: navy;
+        background-color: #00adb5;
       }
       > .event_place_text_keizai{
-        background-color: orange;
+        background-color: #ff5722;
       }
       > .event_place_text_keiei{
-        background-color: green;
+        background-color: #eeeeee;
+        color: black;
       }
       > .event_genre_1{
-        background-color: navy;
+        background-color: #004b79;
       }
       > .event_genre_2{
-        background-color: hotpink;
+        background-color: #7f181b;
       }
       > .event_genre_3{
-        background-color: blue;
+        background-color: #56a0d3;
       }
       > .event_genre_4{
-        background-color: skyblue;
+        background-color: #537b35;
       }
       > .event_genre_5{
-        background-color: orangered;
+        background-color: #ecb731;
       }
       > .event_genre_6{
-        background-color: red;
+        background-color: #b4a996;
+        color: black;
       }
       > .event_genre_7{
-        background-color: cadetblue;
+        background-color: #d7d7d8;
       }
       > .event_genre_8{
-        background-color: black;
+        background-color: #6d6e70;
       }
     }
 
