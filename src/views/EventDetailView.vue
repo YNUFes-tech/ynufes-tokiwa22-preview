@@ -56,6 +56,8 @@ const eventData = {
 
   align-items: center;
   margin: 0 auto;;
+
+  color: white;
 }
 
 .event-detail {
