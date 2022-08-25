@@ -91,6 +91,12 @@ p {
   letter-spacing: 5px;
   line-height: 2;
   text-align: left;
+  &::first-letter{
+    font-size: 2em;
+  }
+  &::first-line{
+    line-height: 1.5;
+  }
 }
 
 .event-detail-description {
@@ -126,9 +132,6 @@ p {
   padding: 1rem;
 }
 
-p::first-letter {
-  font-size: 38px;
-}
 
 .fade-up {
   animation-name: fadeUpAnime;
