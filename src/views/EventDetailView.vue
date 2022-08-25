@@ -67,9 +67,7 @@ const eventData = {
   margin: 0 auto;
   max-width: 800px;
   padding: 5rem;
-  background-image: url("//src/assets/S__958470.png");
   background-size: contain;
-
 }
 
 .event-detail-title {
