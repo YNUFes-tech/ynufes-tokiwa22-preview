@@ -27,8 +27,9 @@ const eventData = {
         <h1 class="event-title">
           {{ eventData.event_name }}
         </h1>
-        <div>
-          場所・日時：{{ eventData.event_type }}
+        <div class="event-place">
+          日時：{{ eventData.event_type }}<br>
+          場所：{{ eventData.event_place }}
         </div>
       </div>
       <div class="event-detail-description">
