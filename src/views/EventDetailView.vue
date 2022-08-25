@@ -83,19 +83,40 @@ const eventData = {
 }
 
 .event-title {
-  width: 18em;
-  font-size: 2.5em;
+  font-size: 3.5rem;
   white-space: pre-wrap;
+}
+
+@media screen and (max-width: 41rem) {
+  .event-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 31rem) {
+  .event-title {
+    font-size: 1.6rem;
+  }
+  .root-wrapper{
+    padding: 0 2rem;
+  }
+}
+
+.event-place {
+  line-height: 1.5;
+  font-size: 1.5rem;
 }
 
 p {
   letter-spacing: 5px;
   line-height: 2;
   text-align: left;
-  &::first-letter{
+
+  &::first-letter {
     font-size: 2em;
   }
-  &::first-line{
+
+  &::first-line {
     line-height: 1.5;
   }
 }
