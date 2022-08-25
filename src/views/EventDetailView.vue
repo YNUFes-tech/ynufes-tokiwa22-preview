@@ -21,10 +21,10 @@ const eventData = {
   <div class="root-wrapper">
     <div class="event-detail">
       <div class="event-detail-title">
-        <div class="kikakudanntaimei">
+        <div class="org-name">
           {{ eventData.org_name }}
         </div>
-        <h1 class="tenzimei">
+        <h1 class="event-title">
           {{ eventData.event_name }}
         </h1>
         <div>
@@ -76,7 +76,7 @@ const eventData = {
   text-align: left;
 }
 
-.tenzimei {
+.event-title {
   width: 18rem;
   font-size: 2.5rem;
 }
