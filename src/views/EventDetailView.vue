@@ -83,15 +83,27 @@ const eventData = {
 
 .event-detail-description {
   display: flex;
-  border-radius: 5px;
   align-items: flex-start;
   letter-spacing: 5px;
   line-height: 2;
   text-align: left;
 }
 
+@media screen and (max-width: 700px){
+  .event-detail-description{
+    display: block;
+    letter-spacing: 5px;
+    line-height: 2;
+    text-align: left;
+  }
+  .event-icon{
+    margin: 0 auto;
+  }
+}
+
 .event-icon  > img{
   max-width: 400px;
+  width: 50vw;
   padding: 1rem;
   flex: 1;
 }
