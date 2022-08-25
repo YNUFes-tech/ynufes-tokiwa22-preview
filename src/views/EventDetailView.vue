@@ -4,7 +4,8 @@ const eventData = {
   "type": "Youtube企画",
   "tag_color": "#e010c1",
   "img": "1001.webp",
-  "event_name": "茶道研究会　活動の記録",
+  "event_name": "茶道研究会あああああ\n活動の記録",
+  "event_place": "都市",
   "org_name": "横浜国立大学茶道研究会",
   "event_description": "私たち茶道研究会の普段の活動の様子を記録しました。普段あまり茶道に触れない方も多いと思うので、今回の動画をきっかけに少しでも茶道について知って頂ければ嬉しく思います。",
   "org_description": "私達のサークル、茶道研究会は「研究会」とついていますが他の大学で言う茶道部と同じ活動をしています。 活動場所は主に大学会館4階の奥の｢かもめ｣という和室です。 基本的に月水金の放課後に活動しているので、 気軽に遊びに来てください。",
@@ -24,8 +25,7 @@ const eventData = {
         <div class="org-name">
           {{ eventData.org_name }}
         </div>
-        <h1 class="event-title">
-          {{ eventData.event_name }}
+        <h1 class="event-title" v-text="eventData.event_name">
         </h1>
         <div class="event-place">
           日時：{{ eventData.event_type }}<br>
@@ -84,8 +84,9 @@ const eventData = {
 }
 
 .event-title {
-  width: 18rem;
-  font-size: 2.5rem;
+  width: 18em;
+  font-size: 2.5em;
+  white-space: pre-wrap;
 }
 
 p {
