@@ -45,7 +45,7 @@ const eventData = {
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .root-wrapper {
   display: flex;
   flex-direction: column;
@@ -89,19 +89,23 @@ const eventData = {
   text-align: left;
 }
 
-@media screen and (max-width: 700px){
-  .event-detail-description{
+@media screen and (max-width: 700px) {
+  .event-detail-description {
     display: block;
     letter-spacing: 5px;
     line-height: 2;
     text-align: left;
   }
-  .event-icon{
-    margin: 0 auto;
+  .event-icon {
+    display: flex;
+
+    > img {
+      margin: 0 auto;
+    }
   }
 }
 
-.event-icon  > img{
+.event-icon > img {
   max-width: 400px;
   width: 50vw;
   padding: 1rem;
@@ -119,13 +123,13 @@ p::first-letter {
 }
 
 .fade-up {
-  animation-name:fadeUpAnime;
-  animation-duration:0.5s;
-  animation-fill-mode:forwards;
-  opacity:0;
+  animation-name: fadeUpAnime;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  opacity: 0;
 }
 
-@keyframes fadeUpAnime{
+@keyframes fadeUpAnime {
   from {
     opacity: 0;
     transform: translateY(100px);
