@@ -1,5 +1,28 @@
 <script setup>
-
+const eventData = {
+  "id": 1001,
+  "event_title": "サンプル企画1",
+  "event_place_text": "都市900",
+  "event_place_color": "都市",
+  "event_genre_id": "1",
+  "icon_filename": "/img/sample_icon_1.2764c44b.png",
+  "org_name": "団体名1",
+};
+const eventGenre = {
+  "1": "展示販売",
+  "2": "パフォーマンス",
+  "3": "ゲームスポーツ",
+  "4": "デザート",
+  "5": "鉄板・麺類",
+  "6": "ファストフード",
+  "7": "ドリンク",
+  "8": "ご飯もの",
+};
+const eventPlace = {
+  "都市": "toshi",
+  "経済": "keizai",
+  "経営": "keiei",
+}
 </script>
 <template>
   <div class="root-wrapper">
@@ -10,23 +33,26 @@
       <div class="content-frame">
         <div class="events_block">
           <div class="event_widget">
-            <!--            <img :src="$store.getters.entities.icon_filename"/>-->
-            <div class="type">Web展示</div>
+            <img :src="eventData.icon_filename"/>
+            <div class="tag_area">
+              <div v-bind:class="'event_genre_' + eventData.event_genre_id"> {{eventGenre[eventData.event_genre_id]}}</div>
+              <div v-bind:class="'event_place_text_' + eventPlace[eventData.event_place_color]">{{ eventData.event_place_text }}</div>
+            </div>
             <div class="meta_area">
               <h2>
-                <!-- {{ $store.getters.entities.event_title }}-->
+                {{ eventData.event_title }}
               </h2>
               <hr>
               <div class="org_name">
-                <!--{{ $store.getters.entities.org_name }}-->
+                {{ eventData.org_name }}
               </div>
             </div>
           </div>
           <div class="event_widget">
             <img src="@/assets/sample_icon_1.png"/>
             <div class="tag_area">
-              <div class="type">Web展示</div>
-              <div class="evemt_genre">展示販売</div>
+              <div class="event_genre_1">展示販売</div>
+              <div class="event_place_text_toshi">都市901</div>
             </div>
             <div class="meta_area">
               <h2>
@@ -40,23 +66,29 @@
           </div>
           <div class="event_widget">
             <img src="@/assets/sample_icon_2.png"/>
-            <div class="type">Web展示</div>
+            <div class="tag_area">
+              <div class="event_genre_2">パフォーマンス</div>
+              <div class="event_place_text_keizai">経済902</div>
+            </div>
             <div class="meta_area">
               <h2>
-                企画名テストイベント
+                テスト企画名テスト2
               </h2>
               <hr>
               <div class="org_name">
-                企画名テスト団体
+                企画テスト団体
               </div>
             </div>
           </div>
           <div class="event_widget">
-            <img src="@/assets/sample_icon_3.png"/>
-            <div class="type">Web展示</div>
+            <img src="@/assets/sample_icon_2.png"/>
+            <div class="tag_area">
+              <div class="event_genre_3">ゲームスポーツ</div>
+              <div class="event_place_text_keiei">経営903</div>
+            </div>
             <div class="meta_area">
               <h2>
-                企画名テストイベント
+                テスト企画名テスト3
               </h2>
               <hr>
               <div class="org_name">
@@ -66,25 +98,49 @@
           </div>
           <div class="event_widget">
             <img src="@/assets/sample_icon_4.png"/>
-            <div class="type">Web展示</div>
+            <div class="tag_area">
+              <div class="event_genre_4">デザート</div>
+              <div class="event_place_text_toshi">都市904</div>
+            </div>
             <div class="meta_area">
               <h2>
-                テストイベント名
+                テスト企画名テスト4
               </h2>
               <hr>
               <div class="org_name">
-                テストイベント団体
+                企画テスト団体
               </div>
             </div>
           </div>
           <div class="event_widget">
             <img src="@/assets/sample_icon_5.png"/>
-            <div class="type">Web展示</div>
+            <div class="tag_area">
+              <div class="event_genre_5">鉄板・麺類</div>
+              <div class="event_place_text_keizai">経済905</div>
+            </div>
             <div class="meta_area">
-              <h2>企画テストイベント</h2>
+              <h2>
+                テスト企画名テスト5
+              </h2>
               <hr>
               <div class="org_name">
-                企画テストイベントダミー団体
+                企画テスト団体
+              </div>
+            </div>
+          </div>
+          <div class="event_widget">
+            <img src="@/assets/sample_icon_1.png"/>
+            <div class="tag_area">
+              <div class="event_genre_6">ファストフード</div>
+              <div class="event_place_text_keiei">経営906</div>
+            </div>
+            <div class="meta_area">
+              <h2>
+                テスト企画名テスト6
+              </h2>
+              <hr>
+              <div class="org_name">
+                企画テスト団体
               </div>
             </div>
           </div>
@@ -175,11 +231,45 @@
       gap: 0.2rem;
 
       > div {
-        font-size: 0.8rem;
+        font-size: 0.78rem;
         color: white;
-        padding: 0.3rem;
-        border-radius: 0.6rem;
-        background: #de31aa;
+        padding: 0.05rem 0.1rem;
+        border-radius: 0.4rem;
+        border: 0.08rem solid ;
+        border-color: #ffffff99 ;
+      }
+      > .event_place_text_toshi{
+        background-color: navy;
+      }
+      > .event_place_text_keizai{
+        background-color: orange;
+      }
+      > .event_place_text_keiei{
+        background-color: green;
+      }
+      > .event_genre_1{
+        background-color: navy;
+      }
+      > .event_genre_2{
+        background-color: hotpink;
+      }
+      > .event_genre_3{
+        background-color: blue;
+      }
+      > .event_genre_4{
+        background-color: skyblue;
+      }
+      > .event_genre_5{
+        background-color: orangered;
+      }
+      > .event_genre_6{
+        background-color: red;
+      }
+      > .event_genre_7{
+        background-color: cadetblue;
+      }
+      > .event_genre_8{
+        background-color: black;
       }
     }
 
