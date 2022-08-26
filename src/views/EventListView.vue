@@ -1,13 +1,4 @@
 <script setup>
-const eventData = {
-  "id": 1001,
-  "event_title": "サンプル企画1",
-  "event_place_text": "都市900",
-  "event_place_color": "都市",
-  "event_genre_id": "1",
-  "icon_filename": "/img/sample_icon_1.2764c44b.png",
-  "org_name": "団体名1",
-};
 const eventGenre = {
   "1": "展示販売",
   "2": "パフォーマンス",
@@ -18,11 +9,6 @@ const eventGenre = {
   "7": "ドリンク",
   "8": "ご飯もの",
 };
-const eventPlace = {
-  "都市": "toshi",
-  "経済": "keizai",
-  "経営": "keiei",
-}
 </script>
 <template>
   <div class="root-wrapper">
@@ -33,18 +19,18 @@ const eventPlace = {
       <div class="content-frame">
         <div class="events_block">
           <div class="event_widget">
-            <img :src="eventData.icon_filename"/>
+            <img :src="this.$store.state.eventData.icon_filename"/>
             <div class="tag_area">
-              <div v-bind:class="'event_genre_' + eventData.event_genre_id"> {{eventGenre[eventData.event_genre_id]}}</div>
-              <div v-bind:class="'event_place_text_' + eventPlace[eventData.event_place_color]">{{ eventData.event_place_text }}</div>
+              <div v-bind:class="'event_genre_' + this.$store.state.eventData.event_genre_id"> {{eventGenre[this.$store.state.eventData.event_genre_id]}}</div>
+              <div v-bind:class="event_place_text_keiei">{{ this.$store.state.eventData.event_place_text }}</div>
             </div>
             <div class="meta_area">
               <h2>
-                {{ eventData.event_title }}
+                {{ this.$store.state.eventData.event_title }}
               </h2>
               <hr>
               <div class="org_name">
-                {{ eventData.org_name }}
+                {{ this.$store.state.eventData.org_name }}
               </div>
             </div>
           </div>
@@ -147,43 +133,6 @@ const eventPlace = {
 
         </div>
       </div>
-
-      <footer>
-        <div class="footer_wrapper">
-          <nav class="sitemap">
-            <ul>
-              <li><a style="color: white">常盤祭について</a></li>
-              <li><a style="color: white">更新情報</a></li>
-              <li><a style="color: white">企画を探す</a></li>
-              <li><a style="color: white">ご協賛について</a></li>
-              <li><a style="color: white">Q&A</a></li>
-              <li><a style="color: white">相互リンク</a></li>
-            </ul>
-          </nav>
-          <div class="footer_org">
-            <div class="logos_area">
-              <img src="https://ynu-fes.yokohama/wp-content/uploads/2020/02/cropped-YNUFES-%E3%83%AD%E3%82%B4.jpg"
-                   alt="YNUFES logo"/>
-              <div class="sns">
-                <a><img class="hover-to-shrink" src="@/assets/twitter_logo.png" alt="twitter"/></a>
-                <a><img class="hover-to-shrink" src="@/assets/instagram_logo.png" alt="instagram"/></a>
-                <a><img class="hover-to-shrink" src="@/assets/facebook_logo.png" alt="facebook"/></a>
-              </div>
-            </div>
-            <div class="organ_area">
-              <div>
-                <h3>横浜国立大学<br>大学祭実行委員会</h3>
-                〒240-0067<br>神奈川県横浜市保土ヶ谷区常盤台79-1
-                <br>文化サークル棟1F
-                <br>大学祭実行委員会室
-                <br> ynu.fes.c☆gmail.com
-                <br> ※☆を＠に変えてメールをお送りください。
-              </div>
-            </div>
-          </div>
-        </div>
-        <div style="font-size: 0.8rem; padding-top:1rem">Copyright &#169;2022 横浜国立大学 大学祭実行委員会</div>
-      </footer>
     </div>
 
   </div>
@@ -333,124 +282,6 @@ const eventPlace = {
     flex-direction: column;
     align-items: center;
     min-height: calc(100vh - 140px - 220px);
-  }
-}
-/*ここからフッター*/
-footer {
-  position: relative;
-  bottom: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 30px;
-  color: white;
-  background: #131516;
-  width: 100%;
-  z-index: 50;
-
-  .footer_wrapper {
-    width: 100%;
-    max-width: 70rem;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .sitemap {
-    flex-basis: 30%;
-    font-size: 1.2rem;
-    margin: 1rem 0 0 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    > ul {
-      margin: auto;
-    }
-  }
-
-  .footer_org {
-    flex-basis: 70%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-
-    .logos_area {
-      margin: 1rem 0 0 2rem;
-      display: flex;
-      flex-direction: row-reverse;
-      justify-content: center;
-      align-items: center;
-
-      > img {
-        margin-left: 0.3rem;
-        width: 10rem;
-        border-radius: 10px;
-      }
-
-      .sns {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        align-items: center;
-        justify-content: center;
-        gap: 0.3rem;
-
-        img {
-          height: 3rem;
-          @media screen and (max-width: 470px) {
-            height: 2rem;
-          }
-        }
-      }
-
-      @media screen and (max-width: 470px) {
-        flex-direction: column;
-        margin-left: 0;
-        .sns {
-          flex-direction: row;
-        }
-        > img {
-          width: 9rem;
-        }
-      }
-      @media screen and (max-width: 470px) {
-        > img {
-          margin-bottom: 1rem;
-          width: 7rem;
-        }
-      }
-    }
-
-    .organ_area {
-      margin-top: 10px;
-      font-size: 0.9rem;
-      margin-left: 3rem;
-
-      h3 {
-        padding: 0;
-        margin: 0;
-        font-size: 1.2rem;
-        line-height: 1.1;
-      }
-
-      @media screen and (max-width: 70rem) {
-        margin-left: 1rem;
-        font-size: 0.7rem;
-      }
-      @media screen and (max-width: 400px) {
-        h3 {
-          font-size: 18px;
-        }
-        margin-left: 0.5rem;
-        font-size: 10px;
-        line-height: 1.2;
-      }
-    }
   }
 }
 
