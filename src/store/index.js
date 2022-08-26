@@ -7,7 +7,8 @@ export default createStore({
       event_title: '',
       event_summary: '',
       event_description: '',
-      event_place: '',
+      event_place_text: '',
+      event_place_id: '',
       event_genre_id: 0,
       icon_filename: '',
       org_name: '',
@@ -19,7 +20,11 @@ export default createStore({
     }
   },
   getters: {},
-  mutations: {},
+  mutations: {
+    update(state, newData) {
+      state.eventData = newData
+    }
+  },
   actions: {},
   modules: {}
 })
