@@ -20,6 +20,15 @@ export default {
   }),
   created() {
     this.eventData = this.$store.state.eventData
+  },
+  methods: {
+    processIcon: function () {
+      if (this.eventData.icon_filename) {
+        URL.revokeObjectURL(this.eventData.icon_filename)
+      }
+      const file = this.$refs.image.files[0]
+      this.eventData.icon_filename = URL.createObjectURL(file)
+    }
   }
 }
 
