@@ -74,6 +74,13 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 auto;;
+  margin: 0 auto;
+  width: min(100%, 50rem);
+  margin-inline: auto;
 }
+
+.top-description {
+  border: #2c3e50 1px solid;
+}
+
 </style>
