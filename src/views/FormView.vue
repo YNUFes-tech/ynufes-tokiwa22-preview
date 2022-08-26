@@ -1,5 +1,8 @@
 <script>
+import WelcomeModal from "@/components/WelcomeModal";
+
 export default {
+  components: {WelcomeModal},
   data: () => ({
     eventData: {
       //それぞれのデータ項目についてはREADMEを参照
@@ -35,6 +38,7 @@ export default {
 </script>
 <template>
   <div class="root-wrapper">
+    <WelcomeModal/>
     <div class="form-item">
       <h2>出展名</h2>
       <ul>
@@ -109,6 +113,7 @@ export default {
       <div class="button">企画詳細ページをプレビュー</div>
     </router-link>
   </div>
+  <modals-container></modals-container>
 </template>
 
 <style scoped lang="scss">
