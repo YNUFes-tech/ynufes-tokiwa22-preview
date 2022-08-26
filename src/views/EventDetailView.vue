@@ -56,8 +56,7 @@ const eventData = {
 .root-wrapper {
   display: flex;
   flex-direction: column;
-
-  background-image: url("/public/background.png");
+  background-image: url("/public/resources/background.png");
   background-size: cover;
   background-attachment: fixed;
   overflow: hidden;
@@ -97,7 +96,7 @@ const eventData = {
   .event-title {
     font-size: 1.6rem;
   }
-  .root-wrapper{
+  .root-wrapper {
     padding: 0 2rem;
   }
 }

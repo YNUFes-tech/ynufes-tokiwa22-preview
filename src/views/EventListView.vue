@@ -27,7 +27,7 @@ const eventPlace = {
 <template>
   <div class="root-wrapper">
     <!--    //この中にレイアウトを記述する-->
-    <img class="background_img" src="@/assets/background_img.png" alt=""/>
+    <img class="background_img" src="/resources/background.png" alt=""/>
 
     <div class="body-frame">
       <div class="content-frame">
