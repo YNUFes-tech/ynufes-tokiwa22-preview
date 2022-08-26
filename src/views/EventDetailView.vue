@@ -16,7 +16,7 @@
       </div>
       <div class="event-detail-description">
         <div class="event-icon">
-          <img :src="`/icon/`+$store.state.eventData.img">
+          <img :src="$store.state.eventData.icon_filename">
         </div>
         <div class="event-description">
           <p v-text="this.$store.state.eventData.event_description">
@@ -25,7 +25,8 @@
       </div>
       <div class="org-detail-description">
         <h2>団体説明</h2>
-        <p v-text="this.$store.state.eventData.event_description">
+        <h3>{{ $store.state.eventData.org_name }}</h3>
+        <p v-text="this.$store.state.eventData.org_description">
         </p>
       </div>
     </div>
