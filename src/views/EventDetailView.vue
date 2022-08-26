@@ -16,7 +16,7 @@
       </div>
       <div class="event-detail-description">
         <div class="event-icon">
-          <img :src="`/icon/`+$store.state.eventData.img">
+          <img :src="$store.state.eventData.icon_filename">
         </div>
         <div class="event-description">
           <p v-text="this.$store.state.eventData.event_description">
