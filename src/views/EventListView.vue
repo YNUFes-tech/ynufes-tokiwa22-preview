@@ -22,7 +22,9 @@ const eventGenre = {
           <div class="event_widget">
             <img :src="$store.state.eventData.icon_filename"/>
             <div class="tag_area">
-              <div v-bind:class="'event_genre_' + $store.state.eventData.event_genre_id"> {{eventGenre[$store.state.eventData.event_genre_id]}}</div>
+              <div v-bind:class="'event_genre_' + $store.state.eventData.event_genre_id">
+                {{ eventGenre[$store.state.eventData.event_genre_id] }}
+              </div>
               <div v-bind:class="event_place_text_keiei">{{ $store.state.eventData.event_place_text }}</div>
             </div>
             <div class="meta_area">
@@ -141,12 +143,10 @@ const eventGenre = {
 
 <style lang="scss" scoped>
 .root-wrapper {
-  font-size: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 auto;;
-
+  margin: 0 auto;
 }
 
 .events_block {
@@ -161,7 +161,7 @@ const eventGenre = {
 
   .event_widget {
     border-radius: 0.5rem;
-    width: 10rem;
+    width: 13.4em;
     background: #00000077;
     position: relative;
     text-overflow: ellipsis;
@@ -181,53 +181,64 @@ const eventGenre = {
       gap: 0.2rem;
 
       > div {
-        font-size: 0.78rem;
+        font-size: unquote("max(0.6rem, 0.9em)");
         color: white;
         padding: 0.05rem 0.1rem;
         border-radius: 0.4rem;
-        border: 0.08rem solid ;
-        border-color: #ffffff99 ;
+        border: 0.08rem solid;
+        border-color: #ffffff99;
       }
-      > .event_place_text_toshi{
+
+      > .event_place_text_toshi {
         background-color: #00adb5;
       }
-      > .event_place_text_keizai{
+
+      > .event_place_text_keizai {
         background-color: #ff5722;
       }
-      > .event_place_text_keiei{
+
+      > .event_place_text_keiei {
         background-color: #eeeeee;
         color: black;
       }
-      > .event_genre_1{
+
+      > .event_genre_1 {
         background-color: #004b79;
       }
-      > .event_genre_2{
+
+      > .event_genre_2 {
         background-color: #7f181b;
       }
-      > .event_genre_3{
+
+      > .event_genre_3 {
         background-color: #56a0d3;
       }
-      > .event_genre_4{
+
+      > .event_genre_4 {
         background-color: #537b35;
       }
-      > .event_genre_5{
+
+      > .event_genre_5 {
         background-color: #ecb731;
       }
-      > .event_genre_6{
+
+      > .event_genre_6 {
         background-color: #b4a996;
         color: black;
       }
-      > .event_genre_7{
+
+      > .event_genre_7 {
         background-color: #d7d7d8;
       }
-      > .event_genre_8{
+
+      > .event_genre_8 {
         background-color: #6d6e70;
       }
     }
 
     > .meta_area {
       color: white;
-      margin: 0.7rem;
+      margin: 0.7em;
 
       h2 {
         display: -webkit-box;
@@ -236,7 +247,7 @@ const eventGenre = {
         overflow: hidden;
         -webkit-box-orient: vertical;
         text-overflow: ellipsis;
-        font-size: 1.2rem;
+        font-size: 1.2em;
         line-height: 1.4rem;
         padding: 0;
         margin: 0;
@@ -301,4 +312,44 @@ const eventGenre = {
     flex-basis: auto;
   }
 }
+
+//3列で表示することを考えた場合、企画リストの横幅は41.2(=13.4 + 0.5 + 13.4 + 0.5 + 13.4)
+@media screen and (max-width: 41.5rem) {
+  .root-wrapper {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 37.4rem) {
+  .root-wrapper {
+    font-size: 0.8rem;
+  }
+}
+
+//ここからは2列で表示する事を考える。
+//企画リストの横幅は27.3(=13.4 + 0.5 + 13.4)
+@media screen and (max-width: 33.3rem) {
+  .root-wrapper {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 27.5rem) {
+  .root-wrapper {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 24.7rem) {
+  .root-wrapper {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 21.9rem) {
+  .root-wrapper{
+    font-size: 0.7rem;
+  }
+}
+
 </style>
