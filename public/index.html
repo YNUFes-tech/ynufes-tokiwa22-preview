@@ -1,12 +1,18 @@
 <!DOCTYPE html>
-<html lang="">
-<head>
+<html lang="ja">
+<!--OGPに対応していることを記載-->
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@600&display=swap" rel="stylesheet">
-    <title><%= htmlWebpackPlugin.options.title %></title>
+    <title>22常盤祭プレビューサイト</title>
+
+    <!--OGPに対応した記載-->
+    <meta property="og:site_name" content="22常盤祭プレビューサイト"/>
+    <meta property="og:description" content="22常盤祭のプレビューサイトです。データを入力することでどのようにデータが反映されるかを確認する事ができます。"/>
+
+    <!--Google Fontの使用を記載-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@600&display=swap" rel="stylesheet">

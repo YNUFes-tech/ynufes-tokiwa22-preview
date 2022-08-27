@@ -1,13 +1,14 @@
 <script setup>
+// eslint-disable-next-line no-unused-vars
 const eventGenre = {
-  "1": "展示販売",
-  "2": "パフォーマンス",
-  "3": "ゲームスポーツ",
-  "4": "デザート",
-  "5": "鉄板・麺類",
-  "6": "ファストフード",
-  "7": "ドリンク",
-  "8": "ご飯もの",
+  1: "展示販売",
+  2: "パフォーマンス",
+  3: "ゲームスポーツ",
+  4: "デザート",
+  5: "鉄板・麺類",
+  6: "ファストフード",
+  7: "ドリンク",
+  8: "ご飯もの",
 };
 </script>
 <template>
@@ -19,18 +20,18 @@ const eventGenre = {
       <div class="content-frame">
         <div class="events_block">
           <div class="event_widget">
-            <img :src="this.$store.state.eventData.icon_filename"/>
+            <img :src="$store.state.eventData.icon_filename"/>
             <div class="tag_area">
-              <div v-bind:class="'event_genre_' + this.$store.state.eventData.event_genre_id"> {{eventGenre[this.$store.state.eventData.event_genre_id]}}</div>
-              <div v-bind:class="event_place_text_keiei">{{ this.$store.state.eventData.event_place_text }}</div>
+              <div v-bind:class="'event_genre_' + $store.state.eventData.event_genre_id"> {{eventGenre[$store.state.eventData.event_genre_id]}}</div>
+              <div v-bind:class="event_place_text_keiei">{{ $store.state.eventData.event_place_text }}</div>
             </div>
             <div class="meta_area">
               <h2>
-                {{ this.$store.state.eventData.event_title }}
+                {{ $store.state.eventData.event_title }}
               </h2>
               <hr>
               <div class="org_name">
-                {{ this.$store.state.eventData.org_name }}
+                {{ $store.state.eventData.org_name }}
               </div>
             </div>
           </div>

@@ -7,11 +7,11 @@
       <div class="event-detail-title">
         <div class="org-name" v-text="this.$store.state.eventData.org_name">
         </div>
-        <h1 class="event-title" v-text="this.$store.state.eventData.event_name">
+        <h1 class="event-title" v-text="this.$store.state.eventData.event_title">
         </h1>
         <div class="event-place">
           日時：全日<br>
-          場所：{{ $store.state.eventData.event_place }}
+          場所：{{ $store.state.eventData.event_place_text }}
         </div>
       </div>
       <div class="event-detail-description">
