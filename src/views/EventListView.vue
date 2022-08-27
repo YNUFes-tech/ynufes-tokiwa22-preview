@@ -22,7 +22,9 @@ const eventGenre = {
           <div class="event_widget">
             <img :src="$store.state.eventData.icon_filename"/>
             <div class="tag_area">
-              <div v-bind:class="'event_genre_' + $store.state.eventData.event_genre_id"> {{eventGenre[$store.state.eventData.event_genre_id]}}</div>
+              <div v-bind:class="'event_genre_' + $store.state.eventData.event_genre_id">
+                {{ eventGenre[$store.state.eventData.event_genre_id] }}
+              </div>
               <div v-bind:class="event_place_text_keiei">{{ $store.state.eventData.event_place_text }}</div>
             </div>
             <div class="meta_area">
