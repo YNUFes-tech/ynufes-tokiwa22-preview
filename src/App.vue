@@ -5,15 +5,20 @@
     <router-link to="/event-detail">詳細ページ</router-link>
   </nav>
   <router-view/>
+  <ModalsContainer/>
 </template>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Klee One', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+body{
+  margin: 0;
 }
 
 nav {
