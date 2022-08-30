@@ -86,7 +86,8 @@ export default {
     </div>
     <div>
       <h2>アイコン</h2>
-      <img :src="this.imgData.src" v-if="this.imgData.src">
+      <!--画像が指定されていない場合にはnoimageを表示する-->
+      <img :src="this.imgData.src?this.imgData.src:'/icon/noimage.png'">
     </div>
     <input type="file" ref="image" @change="processIcon"/>
     <div class="form-item">
