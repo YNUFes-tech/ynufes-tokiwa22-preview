@@ -42,9 +42,8 @@ export default {
     <div class="form-item">
       <h2>出展名</h2>
       <ul>
-        <li>改行も適用されます。</li>
-        <li>横最大全角10文字までを想定しています。</li>
-        <li>改行を行う際は、GoogleFormに改行した状態で記入してください。</li>
+        <li>改行も適用されます。(最大2行まで)(改行を行う際は、GoogleFormに改行した状態で記入してください。)</li>
+        <li>一行最低全角9文字まで入るようにしています。</li>
       </ul>
       <textarea v-model="eventData.event_title"/>
     </div>
@@ -56,6 +55,7 @@ export default {
       <h2>企画説明文</h2>
       <ul>
         <li>改行も適用されます。</li>
+        <li>ここに記入した内容は保存されません</li>
       </ul>
       <textarea v-model="eventData.event_description"/>
     </div>
@@ -88,6 +88,10 @@ export default {
     </div>
     <div class="form-item">
       <h2>団体説明文</h2>
+      <ul>
+        <li>改行も適用されます。</li>
+        <li>ここに記入した内容は保存されません</li>
+      </ul>
       <textarea v-model="eventData.org_description"/>
     </div>
     <div class="form-item">
@@ -134,7 +138,7 @@ export default {
 
 ol, ul {
   text-align: start;
-  margin: 0;
+  margin: 0.4em 0;
 }
 
 .form-item {
