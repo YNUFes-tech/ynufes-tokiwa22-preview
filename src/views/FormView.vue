@@ -12,25 +12,32 @@ export default {
       event_place_text: '',
       event_place_id: '',
       event_genre_id: 0,
-      icon_filename: '',
+      // icon_filename: '',
       org_name: '',
       org_description: '',
       sns_twitter: '',
       sns_facebook: '',
       sns_instagram: '',
       sns_website: '',
+    },
+    imgData: {
+      src: '',
+      type: '',
+      width: 0,
+      height: 0
     }
   }),
   created() {
     this.eventData = this.$store.state.eventData
+    this.imgData = this.$store.state.imgData
   },
   methods: {
     processIcon: function () {
-      if (this.eventData.icon_filename) {
-        URL.revokeObjectURL(this.eventData.icon_filename)
+      if (this.imgData.src) {
+        URL.revokeObjectURL(this.imgData.src)
       }
       const file = this.$refs.image.files[0]
-      this.eventData.icon_filename = URL.createObjectURL(file)
+      this.imgData.src = URL.createObjectURL(file)
     }
   }
 }
@@ -79,7 +86,7 @@ export default {
     </div>
     <div>
       <h2>アイコン</h2>
-      <img :src="this.eventData.icon_filename" v-if="this.eventData.icon_filename">
+      <img :src="this.imgData.src" v-if="this.imgData.src">
     </div>
     <input type="file" ref="image" @change="processIcon"/>
     <div class="form-item">

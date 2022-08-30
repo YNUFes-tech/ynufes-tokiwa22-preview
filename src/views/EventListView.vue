@@ -20,7 +20,7 @@ const eventGenre = {
       <div class="content-frame">
         <div class="events_block">
           <div class="event_widget">
-            <img :src="$store.state.eventData.icon_filename"/>
+            <img :src="$store.state.imgData.src"/>
             <div class="tag_area">
               <div v-bind:class="'event_genre_' + $store.state.eventData.event_genre_id">
                 {{ eventGenre[$store.state.eventData.event_genre_id] }}
