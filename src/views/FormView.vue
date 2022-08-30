@@ -125,7 +125,6 @@ export default {
       <div class="button">企画詳細ページをプレビュー</div>
     </router-link>
   </div>
-  <modals-container></modals-container>
 </template>
 
 <style scoped lang="scss">
