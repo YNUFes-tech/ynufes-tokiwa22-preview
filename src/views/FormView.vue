@@ -134,9 +134,11 @@ export default {
 
 ol, ul {
   text-align: start;
+  margin: 0;
 }
 
 .form-item {
+  box-sizing: border-box;
   padding: 1rem;
   width: unquote("min(100%, 40rem)");
 
