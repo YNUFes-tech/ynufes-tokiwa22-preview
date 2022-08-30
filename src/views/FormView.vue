@@ -32,12 +32,48 @@ export default {
     this.imgData = this.$store.state.imgData
   },
   methods: {
+    /**
+     * processIcon関数では、選択された画像を読み込み、さらにそのサイズを取得してチェックする操作を行う。
+     */
     processIcon: function () {
+      //すでにファイルが選択されていた場合にそのデータを破棄する
       if (this.imgData.src) {
-        URL.revokeObjectURL(this.imgData.src)
+        URL.revokeObjectURL(this.imgData.src);
       }
+      //選択されたファイルを取得する。
       const file = this.$refs.image.files[0]
+
+      //ファイルが存在しない場合、または画像ファイルでない場合は、画像の指定の中身をリセットしたうえで、処理を中断する。
+      if (!file || file.type.indexOf('image/') !== 0) {
+        this.imgData.src = ''
+        return
+      }
       this.imgData.src = URL.createObjectURL(file)
+      //画像を読み込んだ上でそのサイズを取得する。
+      let reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = (e) => {
+        let img = new Image();
+        //読み込まれたら縦横のサイズを確認
+        img.onload = () => {
+          this.imgData.width = img.width
+          this.imgData.height = img.height
+          console.log(this.imgData.width, this.imgData.height)
+        }
+        img.src = e.target.result;
+      }
+
+      //読み込み時にエラーが発生したら
+      reader.onerror = (e) => {
+        this.imgData.src = ''
+        console.error(e)
+      }
+    },
+    status_ok: function () {
+      return this.imgData.src.length > 0 && this.imgData.width === this.imgData.height
+    },
+    status_ng: function () {
+      return this.imgData.src.length > 0 && this.imgData.width !== this.imgData.height
     }
   }
 }
@@ -84,12 +120,18 @@ export default {
         <option value="8">ご飯もの</option>
       </select>
     </div>
-    <div>
+    <div class="form-item">
       <h2>アイコン</h2>
       <!--画像が指定されていない場合にはnoimageを表示する-->
       <img :src="this.imgData.src?this.imgData.src:'/icon/noimage.png'">
+      <div class="status_label" id="status_ok" v-show="status_ok()"><span
+          class="material-symbols-outlined">check_circle</span>画像のサイズは正方形です
+      </div>
+      <div id="status_ng" v-show="status_ng()"><span class="material-symbols-outlined">dangerous</span>画像のサイズが正方形ではありません。
+      </div>
+      画像サイズ: {{ this.imgData.width }} × {{ this.imgData.height }}
     </div>
-    <input type="file" ref="image" @change="processIcon"/>
+    <input type="file" ref="image" @change="processIcon" accept="image/*"/>
     <div class="form-item">
       <h2>母団体名</h2>
       <input v-model="eventData.org_name"/>
@@ -163,8 +205,31 @@ ol, ul {
   }
 
   img {
+    aspect-ratio: 1;
     width: 300px;
     height: 300px;
+    object-fit: contain;
+    background: #6d6e70;
+  }
+
+  .material-symbols-outlined {
+    vertical-align: bottom;
+  }
+
+  #status_ok, #status_ng {
+    margin: 0.4em auto;
+    width: fit-content;
+    border-radius: 1em;
+    padding: 0.2em;
+    color: white;
+  }
+
+  #status_ok {
+    background: #20b772;
+  }
+
+  #status_ng {
+    background: #e8610c;
   }
 }
 
