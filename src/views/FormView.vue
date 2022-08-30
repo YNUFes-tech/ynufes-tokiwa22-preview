@@ -84,7 +84,7 @@ export default {
     <input type="file" ref="image" @change="processIcon"/>
     <div class="form-item">
       <h2>母団体名</h2>
-      <input v-model="eventData.org_name">
+      <input v-model="eventData.org_name"/>
     </div>
     <div class="form-item">
       <h2>団体説明文</h2>
@@ -92,19 +92,19 @@ export default {
     </div>
     <div class="form-item">
       <h2>団体のTwitterアカウント</h2>
-      <input v-model="eventData.sns_twitter">
+      <input v-model="eventData.sns_twitter"/>
     </div>
     <div class="form-item">
       <h2>団体のFacebookアカウント</h2>
-      <input v-model="eventData.sns_facebook">
+      <input v-model="eventData.sns_facebook"/>
     </div>
     <div class="form-item">
       <h2>団体のInstagramアカウント</h2>
-      <input v-model="eventData.sns_instagram">
+      <input v-model="eventData.sns_instagram"/>
     </div>
     <div class="form-item">
       <h2>団体のWebサイトリンク</h2>
-      <input v-model="eventData.sns_website">
+      <input v-model="eventData.sns_website"/>
     </div>
     <router-link to="/event-list">
       <div class="button">企画一覧ページをプレビュー</div>
