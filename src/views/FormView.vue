@@ -88,7 +88,7 @@ export default {
     </div>
     <div class="form-item">
       <h2>団体説明文</h2>
-      <input v-model="eventData.org_description">
+      <textarea v-model="eventData.org_description"/>
     </div>
     <div class="form-item">
       <h2>団体のTwitterアカウント</h2>
