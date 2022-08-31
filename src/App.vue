@@ -5,7 +5,6 @@
     <router-link to="/event-detail">詳細ページ</router-link>
   </nav>
   <router-view/>
-  <ModalsContainer/>
 </template>
 
 <style>

@@ -7,26 +7,25 @@
       <div class="event-detail-title">
         <div class="org-name" v-text="this.$store.state.eventData.org_name">
         </div>
-        <h1 class="event-title" v-text="this.$store.state.eventData.event_name">
+        <h1 class="event-title allow-wrap" v-text="this.$store.state.eventData.event_title">
         </h1>
         <div class="event-place">
           日時：全日<br>
-          場所：{{ $store.state.eventData.event_place }}
+          場所：{{ $store.state.eventData.event_place_text }}
         </div>
       </div>
       <div class="event-detail-description">
         <div class="event-icon">
-          <img :src="$store.state.eventData.icon_filename">
+          <img :src="$store.state.imgData.src?$store.state.imgData.src:'/icon/noimage.png'">
         </div>
         <div class="event-description">
-          <p v-text="this.$store.state.eventData.event_description">
-          </p>
+          <p class="allow-wrap" v-text="this.$store.state.eventData.event_description"/>
         </div>
       </div>
       <div class="org-detail-description">
         <h2>団体説明</h2>
         <h3>{{ $store.state.eventData.org_name }}</h3>
-        <p v-text="this.$store.state.eventData.org_description">
+        <p class="allow-wrap" v-text="this.$store.state.eventData.org_description">
         </p>
       </div>
     </div>
@@ -34,6 +33,10 @@
 </template>
 
 <style scoped lang="scss">
+.allow-wrap{
+  white-space: pre-wrap;
+}
+
 .root-wrapper {
   display: flex;
   flex-direction: column;
