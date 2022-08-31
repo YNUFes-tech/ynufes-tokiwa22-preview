@@ -129,7 +129,9 @@ export default {
       </div>
       <div id="status_ng" v-show="status_ng()"><span class="material-symbols-outlined">dangerous</span>画像のサイズが正方形ではありません。
       </div>
-      画像サイズ: {{ this.imgData.width }} × {{ this.imgData.height }}
+      <div>
+        画像サイズ: {{ this.imgData.width }} × {{ this.imgData.height }}
+      </div>
     </div>
     <input type="file" ref="image" @change="processIcon" accept="image/*"/>
     <div class="form-item">
