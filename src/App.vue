@@ -7,7 +7,11 @@
   <router-view/>
   <ModalsContainer/>
 </template>
-
+<script>
+window.onbeforeunload = function () {
+  return '現在のデータは保存されません。ページを離れてもよろしいですか?';
+};
+</script>
 <style>
 #app {
   font-family: 'Klee One', cursive;
