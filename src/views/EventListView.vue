@@ -1,4 +1,7 @@
 <script setup>
+
+import EventWidget from "@/components/EventWidget";
+import data from "@/assets/eventdata.json";
 // eslint-disable-next-line no-unused-vars
 const eventGenre = {
   1: "展示販売",
@@ -10,17 +13,18 @@ const eventGenre = {
   7: "ドリンク",
   8: "ご飯もの",
 };
+
 </script>
 <template>
   <div class="root-wrapper">
     <!--    //この中にレイアウトを記述する-->
-    <img class="background_img" src="/resources/background.png" alt=""/>
+    <img class="background_img" src="/resources/background.webp" alt=""/>
 
     <div class="body-frame">
       <div class="content-frame">
         <div class="events_block">
           <div class="event_widget">
-            <img :src="$store.state.eventData.icon_filename"/>
+            <img :src="$store.state.imgData.src?$store.state.imgData.src:'/icon/noimage.png'"/>
             <div class="tag_area">
               <div v-bind:class="'event_genre_' + $store.state.eventData.event_genre_id">
                 {{ eventGenre[$store.state.eventData.event_genre_id] }}
@@ -35,102 +39,8 @@ const eventGenre = {
               </div>
             </div>
           </div>
-          <div class="event_widget">
-            <img src="@/assets/sample_icon_1.png"/>
-            <div class="tag_area">
-              <div class="event_genre_1">展示販売</div>
-              <div class="event_place_text_toshi">都市901</div>
-            </div>
-            <div class="meta_area">
-              <h2>
-                テスト企画名テスト1
-              </h2>
-              <hr>
-              <div class="org_name">
-                企画テスト団体
-              </div>
-            </div>
-          </div>
-          <div class="event_widget">
-            <img src="@/assets/sample_icon_2.png"/>
-            <div class="tag_area">
-              <div class="event_genre_2">パフォーマンス</div>
-              <div class="event_place_text_keizai">経済902</div>
-            </div>
-            <div class="meta_area">
-              <h2>
-                テスト企画名テスト2
-              </h2>
-              <hr>
-              <div class="org_name">
-                企画テスト団体
-              </div>
-            </div>
-          </div>
-          <div class="event_widget">
-            <img src="@/assets/sample_icon_2.png"/>
-            <div class="tag_area">
-              <div class="event_genre_3">ゲームスポーツ</div>
-              <div class="event_place_text_keiei">経営903</div>
-            </div>
-            <div class="meta_area">
-              <h2>
-                テスト企画名テスト3
-              </h2>
-              <hr>
-              <div class="org_name">
-                企画テスト団体
-              </div>
-            </div>
-          </div>
-          <div class="event_widget">
-            <img src="@/assets/sample_icon_4.png"/>
-            <div class="tag_area">
-              <div class="event_genre_4">デザート</div>
-              <div class="event_place_text_toshi">都市904</div>
-            </div>
-            <div class="meta_area">
-              <h2>
-                テスト企画名テスト4
-              </h2>
-              <hr>
-              <div class="org_name">
-                企画テスト団体
-              </div>
-            </div>
-          </div>
-          <div class="event_widget">
-            <img src="@/assets/sample_icon_5.png"/>
-            <div class="tag_area">
-              <div class="event_genre_5">鉄板・麺類</div>
-              <div class="event_place_text_keizai">経済905</div>
-            </div>
-            <div class="meta_area">
-              <h2>
-                テスト企画名テスト5
-              </h2>
-              <hr>
-              <div class="org_name">
-                企画テスト団体
-              </div>
-            </div>
-          </div>
-          <div class="event_widget">
-            <img src="@/assets/sample_icon_1.png"/>
-            <div class="tag_area">
-              <div class="event_genre_6">ファストフード</div>
-              <div class="event_place_text_keiei">経営906</div>
-            </div>
-            <div class="meta_area">
-              <h2>
-                テスト企画名テスト6
-              </h2>
-              <hr>
-              <div class="org_name">
-                企画テスト団体
-              </div>
-            </div>
-          </div>
+
+          <EventWidget v-for="d in data" :key="d.key" :eventData="d"/>
 
         </div>
       </div>
@@ -241,7 +151,7 @@ const eventGenre = {
       h2 {
         display: -webkit-box;
         -webkit-line-clamp: 2;
-        max-height: 2.8rem;
+        max-height: 3rem;
         overflow: hidden;
         -webkit-box-orient: vertical;
         text-overflow: ellipsis;

@@ -10,13 +10,22 @@ export default createStore({
       event_place_text: '都市199',
       event_place_id: 'toshi',
       event_genre_id: 1,
-      icon_filename: '/icon/noimage.png',
+      // icon_filename: '/icon/noimage.png',
       org_name: 'サークルオブライフ',
       org_description: '植物を種や苗から育てたり、植林活動を行ったりしています。活動は土日がメインです。',
       sns_twitter: 'ynu_fes',
       sns_facebook: 'ynufes',
       sns_instagram: 'ynu_fes',
       sns_website: 'https://ynu-fes.yokohama',
+    },
+    imgData: {
+      // 画像のデータを格納
+      src: '',
+      // 画像の種類
+      type: '',
+      // 画像の縦横の大きさ
+      width: 0,
+      height: 0
     }
   },
   getters: {},
