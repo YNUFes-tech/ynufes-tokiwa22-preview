@@ -37,7 +37,7 @@
 .root-wrapper {
   display: flex;
   flex-direction: column;
-  background-image: url("/public/resources/background.png");
+  background-image: url("/public/resources/background.webp");
   background-size: cover;
   background-attachment: fixed;
   overflow: hidden;

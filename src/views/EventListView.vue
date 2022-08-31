@@ -13,7 +13,7 @@ const eventGenre = {
 <template>
   <div class="root-wrapper">
     <!--    //この中にレイアウトを記述する-->
-    <img class="background_img" src="/resources/background.png" alt=""/>
+    <img class="background_img" src="/resources/background.webp" alt=""/>
 
     <div class="body-frame">
       <div class="content-frame">
@@ -231,7 +231,7 @@ const eventGenre = {
       h2 {
         display: -webkit-box;
         -webkit-line-clamp: 2;
-        max-height: 2.8rem;
+        max-height: 3rem;
         overflow: hidden;
         -webkit-box-orient: vertical;
         text-overflow: ellipsis;
