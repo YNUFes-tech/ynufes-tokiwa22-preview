@@ -28,6 +28,18 @@
         <p class="allow-wrap" v-text="this.$store.state.eventData.org_description">
         </p>
       </div>
+      <div class="SNS">
+<!--        画像のダウンロード元のサイト（https://icon-rainbow.com/tag/sns/）-->
+        <a :href="`https://facebook.com/` + $store.state.eventData.sns_facebook" class="SNS-icon c-btn" target="_blank" rel="noopener noreferrer">
+          <img src="../assets/facebook_icon.png">
+        </a>
+        <a :href="`https://twitter.com/` + $store.state.eventData.sns_twitter" class="SNS-icon c-btn" target="_blank" rel="noopener noreferrer">
+          <img src="../assets/twitter_icon.png">
+        </a>
+        <a :href="`https://instagram.com/` + $store.state.eventData.sns_instagram" class="SNS-icon c-btn" target="_blank" rel="noopener noreferrer">
+          <img src="../assets/instagram_icon.png">
+        </a>
+      </div>
     </div>
   </div>
 </template>
@@ -135,6 +147,26 @@ p {
   width: 100%;
   text-transform: capitalize;
   padding: 1rem;
+}
+
+.SNS{
+  display: flex;
+  justify-content: center;
+  padding-top: 5rem;
+}
+
+.SNS-icon img{
+  max-width: 100px;
+  width: 40%;
+  margin: 1rem;
+}
+
+.c-btn{
+  transition: transform 0.2s;
+}
+.c-btn:hover {
+  transform: scale(1.5, 1.5);
+
 }
 
 
