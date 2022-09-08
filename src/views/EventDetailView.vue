@@ -30,13 +30,13 @@
       </div>
       <div class="SNS">
 <!--        画像のダウンロード元のサイト（https://icon-rainbow.com/tag/sns/）-->
-        <a href="$store.state.eventData.sns_facebook" class="SNS-icon">
+        <a href="$store.state.eventData.sns_facebook" class="SNS-icon c-btn">
           <img src="../assets/facebook_icon.png">
         </a>
-        <a href="$store.state.eventData.sns_twitter" class="SNS-icon">
+        <a href="$store.state.eventData.sns_twitter" class="SNS-icon c-btn">
           <img src="../assets/twitter_icon.png">
         </a>
-        <a href="$store.state.eventData.sns_instagram" class="SNS-icon">
+        <a href="$store.state.eventData.sns_instagram" class="SNS-icon c-btn">
           <img src="../assets/instagram_icon.png">
         </a>
       </div>
@@ -159,6 +159,14 @@ p {
   max-width: 100px;
   width: 40%;
   margin: 1rem;
+}
+
+.c-btn{
+  transition: transform 0.2s;
+}
+.c-btn:hover {
+  transform: scale(1.5, 1.5);
+
 }
 
 
