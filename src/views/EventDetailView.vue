@@ -30,13 +30,13 @@
       </div>
       <div class="SNS">
 <!--        画像のダウンロード元のサイト（https://icon-rainbow.com/tag/sns/）-->
-        <a href="$store.state.eventData.sns_facebook" class="SNS-icon c-btn">
+        <a :href="$store.state.eventData.sns_facebook" class="SNS-icon c-btn" target="_blank" rel="noopener noreferrer">
           <img src="../assets/facebook_icon.png">
         </a>
-        <a href="$store.state.eventData.sns_twitter" class="SNS-icon c-btn">
+        <a :href="$store.state.eventData.sns_twitter" class="SNS-icon c-btn" target="_blank" rel="noopener noreferrer">
           <img src="../assets/twitter_icon.png">
         </a>
-        <a href="$store.state.eventData.sns_instagram" class="SNS-icon c-btn">
+        <a :href="$store.state.eventData.sns_instagram" class="SNS-icon c-btn" target="_blank" rel="noopener noreferrer">
           <img src="../assets/instagram_icon.png">
         </a>
       </div>
