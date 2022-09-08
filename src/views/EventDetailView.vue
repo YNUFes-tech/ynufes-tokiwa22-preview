@@ -28,6 +28,18 @@
         <p class="allow-wrap" v-text="this.$store.state.eventData.org_description">
         </p>
       </div>
+      <div class="SNS">
+<!--        画像のダウンロード元のサイト（https://icon-rainbow.com/tag/sns/）-->
+        <a href="$store.state.eventData.sns_facebook" class="SNS-icon">
+          <img src="../assets/facebook_icon.png">
+        </a>
+        <a href="$store.state.eventData.sns_twitter" class="SNS-icon">
+          <img src="../assets/twitter_icon.png">
+        </a>
+        <a href="$store.state.eventData.sns_instagram" class="SNS-icon">
+          <img src="../assets/instagram_icon.png">
+        </a>
+      </div>
     </div>
   </div>
 </template>
@@ -135,6 +147,18 @@ p {
   width: 100%;
   text-transform: capitalize;
   padding: 1rem;
+}
+
+.SNS{
+  display: flex;
+  justify-content: center;
+  padding-top: 5rem;
+}
+
+.SNS-icon img{
+  max-width: 100px;
+  width: 40%;
+  margin: 1rem;
 }
 
 
