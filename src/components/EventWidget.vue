@@ -22,7 +22,7 @@ const eventGenre = {
 
 <template>
   <div class="event_widget">
-    <img :src="`/icon/${props.eventData.icon_filename}`"/>
+    <img :src="`./icon/${props.eventData.icon_filename}`"/>
     <div class="tag_area">
       <div v-bind:class="`event_genre_${props.eventData.event_genre_id}`">
         {{ eventGenre[props.eventData.event_genre_id] }}
@@ -47,98 +47,98 @@ const eventGenre = {
   position: relative;
   text-overflow: ellipsis;
 
-> img {
-  border-top-right-radius: 0.5rem;
-  border-top-left-radius: 0.5rem;
-  width: 100%;
-}
+  > img {
+    border-top-right-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
+    width: 100%;
+  }
 
-> .tag_area {
-  position: relative;
-  margin: 0.3rem;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 0.2rem;
+  > .tag_area {
+    position: relative;
+    margin: 0.3rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.2rem;
 
-> div {
-  font-size: unquote("max(0.6rem, 0.9em)");
-  color: white;
-  padding: 0.05rem 0.1rem;
-  border-radius: 0.4rem;
-  border: 0.08rem solid;
-  border-color: #ffffff99;
-}
+    > div {
+      font-size: unquote("max(0.6rem, 0.9em)");
+      color: white;
+      padding: 0.05rem 0.1rem;
+      border-radius: 0.4rem;
+      border: 0.08rem solid;
+      border-color: #ffffff99;
+    }
 
-> .event_place_text_toshi {
-  background-color: #00adb5;
-}
+    > .event_place_text_toshi {
+      background-color: #00adb5;
+    }
 
-> .event_place_text_keizai {
-  background-color: #ff5722;
-}
+    > .event_place_text_keizai {
+      background-color: #ff5722;
+    }
 
-> .event_place_text_keiei {
-  background-color: #eeeeee;
-  color: black;
-}
+    > .event_place_text_keiei {
+      background-color: #eeeeee;
+      color: black;
+    }
 
-> .event_genre_1 {
-  background-color: #004b79;
-}
+    > .event_genre_1 {
+      background-color: #004b79;
+    }
 
-> .event_genre_2 {
-  background-color: #7f181b;
-}
+    > .event_genre_2 {
+      background-color: #7f181b;
+    }
 
-> .event_genre_3 {
-  background-color: #56a0d3;
-}
+    > .event_genre_3 {
+      background-color: #56a0d3;
+    }
 
-> .event_genre_4 {
-  background-color: #537b35;
-}
+    > .event_genre_4 {
+      background-color: #537b35;
+    }
 
-> .event_genre_5 {
-  background-color: #ecb731;
-}
+    > .event_genre_5 {
+      background-color: #ecb731;
+    }
 
-> .event_genre_6 {
-  background-color: #b4a996;
-  color: black;
-}
+    > .event_genre_6 {
+      background-color: #b4a996;
+      color: black;
+    }
 
-> .event_genre_7 {
-  background-color: #d7d7d8;
-}
+    > .event_genre_7 {
+      background-color: #d7d7d8;
+    }
 
-> .event_genre_8 {
-  background-color: #6d6e70;
-}
-}
+    > .event_genre_8 {
+      background-color: #6d6e70;
+    }
+  }
 
-> .meta_area {
-  color: white;
-  margin: 0.7em;
+  > .meta_area {
+    color: white;
+    margin: 0.7em;
 
-h2 {
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  max-height: 2.8rem;
-  overflow: hidden;
-  -webkit-box-orient: vertical;
-  text-overflow: ellipsis;
-  font-size: 1.2em;
-  line-height: 1.4rem;
-  padding: 0;
-  margin: 0;
-}
-}
+    h2 {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      max-height: 2.8rem;
+      overflow: hidden;
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+      font-size: 1.2em;
+      line-height: 1.4rem;
+      padding: 0;
+      margin: 0;
+    }
+  }
 
-> hr {
-  margin: 0;
-  padding: 0;
-}
+  > hr {
+    margin: 0;
+    padding: 0;
+  }
 
 }
 </style>

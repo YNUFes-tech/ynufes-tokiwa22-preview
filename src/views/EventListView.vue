@@ -1,5 +1,4 @@
 <script setup>
-
 import EventWidget from "@/components/EventWidget";
 import data from "@/assets/eventdata.json";
 // eslint-disable-next-line no-unused-vars
@@ -18,13 +17,13 @@ const eventGenre = {
 <template>
   <div class="root-wrapper">
     <!--    //この中にレイアウトを記述する-->
-    <img class="background_img" src="/resources/background.webp" alt=""/>
+    <img class="background_img" src="@/assets/background.webp" alt=""/>
 
     <div class="body-frame">
       <div class="content-frame">
         <div class="events_block">
           <div class="event_widget">
-            <img :src="$store.state.imgData.src?$store.state.imgData.src:'/icon/noimage.png'"/>
+            <img :src="$store.state.imgData.src?$store.state.imgData.src:' ./icon/noimage.png'"/>
             <div class="tag_area">
               <div v-bind:class="'event_genre_' + $store.state.eventData.event_genre_id">
                 {{ eventGenre[$store.state.eventData.event_genre_id] }}
@@ -255,7 +254,7 @@ const eventGenre = {
 }
 
 @media screen and (max-width: 21.9rem) {
-  .root-wrapper{
+  .root-wrapper {
     font-size: 0.7rem;
   }
 }
