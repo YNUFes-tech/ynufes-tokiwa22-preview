@@ -22,22 +22,23 @@ const eventGenre = {
     <div class="body-frame">
       <div class="content-frame">
         <div class="events_block">
-          <div class="event_widget">
-            <img :src="$store.state.imgData.src?$store.state.imgData.src:' ./icon/noimage.png'"/>
-            <div class="tag_area">
-              <div v-bind:class="'event_genre_' + $store.state.eventData.event_genre_id">
-                {{ eventGenre[$store.state.eventData.event_genre_id] }}
-              </div>
-              <div v-bind:class="event_place_text_keiei">{{ $store.state.eventData.event_place_text }}</div>
-            </div>
-            <div class="meta_area">
-              <h2 v-text="$store.state.eventData.event_title" style="white-space: pre-wrap"/>
-              <hr>
-              <div class="org_name">
-                {{ $store.state.eventData.org_name }}
-              </div>
-            </div>
-          </div>
+          <EventWidget :eventData="
+          {
+            id: 1002,
+            event_title: $store.state.eventData.event_title,
+            event_summary: $store.state.eventData.event_summary,
+            event_description: $store.state.eventData.event_description,
+            event_place_text: $store.state.eventData.event_place_text,
+            event_place_id: $store.state.eventData.event_place_id,
+            event_genre_id: $store.state.eventData.event_genre_id,
+            icon_filename: $store.state.imgData.src?$store.state.imgData.src:' ./icon/noimage.png',
+            org_name: $store.state.eventData.org_name,
+            org_description: $store.state.eventData.org_description,
+            sns_twitter: $store.state.eventData.sns_twitter,
+            sns_facebook: $store.state.eventData.sns_facebook,
+            sns_instagram: $store.state.eventData.sns_instagram,
+            sns_website: $store.state.eventData.sns_website
+          }"/>
 
           <EventWidget v-for="d in data" :key="d.key" :eventData="d"/>
 
@@ -65,108 +66,6 @@ const eventGenre = {
   flex-wrap: wrap;
   max-width: 70rem;
   width: 100%;
-
-  .event_widget {
-    border-radius: 0.5rem;
-    width: 13.4em;
-    background: #00000077;
-    position: relative;
-    text-overflow: ellipsis;
-
-    > img {
-      border-top-right-radius: 0.5rem;
-      border-top-left-radius: 0.5rem;
-      width: 100%;
-    }
-
-    > .tag_area {
-      position: relative;
-      margin: 0.3rem;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      gap: 0.2rem;
-
-      > div {
-        font-size: unquote("max(0.6rem, 0.9em)");
-        color: white;
-        padding: 0.05rem 0.1rem;
-        border-radius: 0.4rem;
-        border: 0.08rem solid;
-        border-color: #ffffff99;
-      }
-
-      > .event_place_text_toshi {
-        background-color: #00adb5;
-      }
-
-      > .event_place_text_keizai {
-        background-color: #ff5722;
-      }
-
-      > .event_place_text_keiei {
-        background-color: #eeeeee;
-        color: black;
-      }
-
-      > .event_genre_1 {
-        background-color: #004b79;
-      }
-
-      > .event_genre_2 {
-        background-color: #7f181b;
-      }
-
-      > .event_genre_3 {
-        background-color: #56a0d3;
-      }
-
-      > .event_genre_4 {
-        background-color: #537b35;
-      }
-
-      > .event_genre_5 {
-        background-color: #ecb731;
-      }
-
-      > .event_genre_6 {
-        background-color: #b4a996;
-        color: black;
-      }
-
-      > .event_genre_7 {
-        background-color: #d7d7d8;
-      }
-
-      > .event_genre_8 {
-        background-color: #6d6e70;
-      }
-    }
-
-    > .meta_area {
-      color: white;
-      margin: 0.7em;
-
-      h2 {
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        max-height: 3rem;
-        overflow: hidden;
-        -webkit-box-orient: vertical;
-        text-overflow: ellipsis;
-        font-size: 1.2em;
-        line-height: 1.4rem;
-        padding: 0;
-        margin: 0;
-      }
-    }
-
-    > hr {
-      margin: 0;
-      padding: 0;
-    }
-
-  }
 }
 
 .body {
