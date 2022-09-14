@@ -123,7 +123,7 @@ export default {
     <div class="form-item">
       <h2>アイコン</h2>
       <!--画像が指定されていない場合にはnoimageを表示する-->
-      <img :src="this.imgData.src?this.imgData.src:'/icon/noimage.png'">
+      <img :src="this.imgData.src?this.imgData.src:'./icon/noimage.png'">
       <div class="status_label" id="status_ok" v-show="status_ok()"><span
           class="material-symbols-outlined">check_circle</span>画像のサイズは正方形です
       </div>
