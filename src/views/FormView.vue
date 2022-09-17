@@ -1,8 +1,9 @@
 <script>
 import WelcomeModal from "@/components/WelcomeModal";
+import HeaderTest1 from "@/components/HeaderTest1";
 
 export default {
-  components: {WelcomeModal},
+  components: {HeaderTest1, WelcomeModal},
   data: () => ({
     eventData: {
       //それぞれのデータ項目についてはREADMEを参照
@@ -80,6 +81,7 @@ export default {
 
 </script>
 <template>
+  <HeaderTest1/>
   <div class="root-wrapper">
     <WelcomeModal/>
     <div class="form-item">

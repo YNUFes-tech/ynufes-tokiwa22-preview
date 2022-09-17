@@ -1,46 +1,55 @@
 <script setup>
+import {defineProps} from "vue";
+import data from "@/assets/eventdata.json";
+import HeaderTest2 from "@/components/HeaderTest2";
 
-import HeaderTest1 from "@/components/HeaderTest1";
+const props=defineProps({
+  EventId: {
+    type: Number,
+    required: true
+  }
+})
+  const eventData = data.find((d) => d.id === props.EventId)
 </script>
 <template>
-  <header-test1/>
+  <HeaderTest2 :EventId="props.EventId"/>
   <div class="root-wrapper">
     <div class="event-detail fade-up">
       <div class="event-detail-title">
-        <div class="org-name" v-text="this.$store.state.eventData.org_name">
+        <div class="org-name" v-text="eventData.org_name">
         </div>
-        <h1 class="event-title allow-wrap" v-text="this.$store.state.eventData.event_title">
+        <h1 class="event-title allow-wrap" v-text="eventData.event_title">
         </h1>
         <div class="event-place">
           日時：全日<br>
-          場所：{{ $store.state.eventData.event_place_text }}
+          場所：{{ eventData.event_place_text }}
         </div>
       </div>
       <div class="event-detail-description">
         <div class="event-icon">
-          <img :src="$store.state.imgData.src?$store.state.imgData.src:'./icon/noimage.png'">
+          <img :src="eventData.icon_filename">
         </div>
         <div class="event-description">
-          <p class="allow-wrap" v-text="this.$store.state.eventData.event_description"/>
+          <p class="allow-wrap" v-text="eventData.event_description"/>
         </div>
       </div>
       <div class="org-detail-description">
         <h2>団体説明</h2>
-        <h3>{{ $store.state.eventData.org_name }}</h3>
-        <p class="allow-wrap" v-text="this.$store.state.eventData.org_description">
+        <h3>{{ eventData.org_name }}</h3>
+        <p class="allow-wrap" v-text="eventData.org_description">
         </p>
       </div>
       <div class="SNS">
         <!--        画像のダウンロード元のサイト（https://icon-rainbow.com/tag/sns/）-->
-        <a :href="`https://facebook.com/` + $store.state.eventData.sns_facebook" class="SNS-icon c-btn" target="_blank"
+        <a :href="`https://facebook.com/` + eventData.sns_facebook" class="SNS-icon c-btn" target="_blank"
            rel="noopener noreferrer">
           <img src="@/assets/facebook_icon.png">
         </a>
-        <a :href="`https://twitter.com/` + $store.state.eventData.sns_twitter" class="SNS-icon c-btn" target="_blank"
+        <a :href="`https://twitter.com/` + eventData.sns_twitter" class="SNS-icon c-btn" target="_blank"
            rel="noopener noreferrer">
           <img src="@/assets/twitter_icon.png">
         </a>
-        <a :href="`https://instagram.com/` + $store.state.eventData.sns_instagram" class="SNS-icon c-btn"
+        <a :href="`https://instagram.com/` + eventData.sns_instagram" class="SNS-icon c-btn"
            target="_blank" rel="noopener noreferrer">
           <img src="@/assets/instagram_icon.png">
         </a>

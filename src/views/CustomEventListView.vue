@@ -1,7 +1,8 @@
 <script setup>
+import {defineProps} from "vue";
 import EventWidget from "@/components/EventWidget";
 import data from "@/assets/eventdata.json";
-import HeaderTest1 from "@/components/HeaderTest1";
+import HeaderTest2 from "@/components/HeaderTest2";
 // eslint-disable-next-line no-unused-vars
 const eventGenre = {
   1: "展示販売",
@@ -13,10 +14,18 @@ const eventGenre = {
   7: "ドリンク",
   8: "ご飯もの",
 };
+const props=defineProps({
+  EventId:{
+    type: Number,
+    required: true
+  }
+})
+
+const eventData = data.find((d) => d.id === props.EventId)
 
 </script>
 <template>
-  <HeaderTest1/>
+  <HeaderTest2 :EventId="props.EventId"/>
   <div class="root-wrapper">
     <!--    //この中にレイアウトを記述する-->
     <img class="background_img" src="@/assets/background.webp" alt=""/>
@@ -27,19 +36,19 @@ const eventGenre = {
           <EventWidget :eventData="
           {
             id: 1002,
-            event_title: $store.state.eventData.event_title,
-            event_summary: $store.state.eventData.event_summary,
-            event_description: $store.state.eventData.event_description,
-            event_place_text: $store.state.eventData.event_place_text,
-            event_place_id: $store.state.eventData.event_place_id,
-            event_genre_id: $store.state.eventData.event_genre_id,
-            icon_filename: $store.state.imgData.src?$store.state.imgData.src:' ./icon/noimage.png',
-            org_name: $store.state.eventData.org_name,
-            org_description: $store.state.eventData.org_description,
-            sns_twitter: $store.state.eventData.sns_twitter,
-            sns_facebook: $store.state.eventData.sns_facebook,
-            sns_instagram: $store.state.eventData.sns_instagram,
-            sns_website: $store.state.eventData.sns_website
+            event_title: eventData.event_title,
+            event_summary: eventData.event_summary,
+            event_description: eventData.event_description,
+            event_place_text: eventData.event_place_text,
+            event_place_id: eventData.event_place_id,
+            event_genre_id: eventData.event_genre_id,
+            icon_filename: eventData.icon_filename,
+            org_name: eventData.org_name,
+            org_description: eventData.org_description,
+            sns_twitter: eventData.sns_twitter,
+            sns_facebook: eventData.sns_facebook,
+            sns_instagram: eventData.sns_instagram,
+            sns_website: eventData.sns_website
           }"/>
 
           <EventWidget v-for="d in data" :key="d.key" :eventData="d"/>
