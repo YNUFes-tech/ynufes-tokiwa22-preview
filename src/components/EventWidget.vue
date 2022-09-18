@@ -41,6 +41,7 @@ const eventGenre = {
 
 <style lang="scss" scoped>
 .event_widget {
+  overflow: hidden;
   border-radius: 0.5rem;
   width: 13.4em;
   background: #00000077;
