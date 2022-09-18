@@ -25,13 +25,13 @@ const routes = [
         path: `/event-list/:id`,
         name:`CustomEventListView`,
         component: CustomEventListView,
-        props:(route) => ({...route.params,EventId: parseInt(route.params.id)})
+        props:(route) => ({...route.params,EventId: route.params.id})
     },
     {
         path: '/event-detail/:id',
         name:'CustomEventDetailView',
         component: CustomEventDetailView,
-        props:(route) => ({...route.params,EventId: parseInt(route.params.id)})
+        props:(route) => ({...route.params,EventId: route.params.id})
     }
 ]
 

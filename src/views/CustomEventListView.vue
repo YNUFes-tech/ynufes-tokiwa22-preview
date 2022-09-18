@@ -16,7 +16,7 @@ const eventGenre = {
 };
 const props=defineProps({
   EventId:{
-    type: Number,
+    type: String,
     required: true
   }
 })

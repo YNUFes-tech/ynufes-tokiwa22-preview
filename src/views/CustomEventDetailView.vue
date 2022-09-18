@@ -5,7 +5,7 @@ import HeaderTest2 from "@/components/HeaderTest2";
 
 const props=defineProps({
   EventId: {
-    type: Number,
+    type: String,
     required: true
   }
 })
