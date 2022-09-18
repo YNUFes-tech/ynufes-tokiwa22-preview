@@ -14,8 +14,8 @@ const eventGenre = {
   7: "ドリンク",
   8: "ご飯もの",
 };
-const props=defineProps({
-  EventId:{
+const props = defineProps({
+  EventId: {
     type: String,
     required: true
   }
@@ -33,7 +33,8 @@ const eventData = data.find((d) => d.id === props.EventId)
     <div class="body-frame">
       <div class="content-frame">
         <div class="events_block">
-          <EventWidget :eventData="
+          <router-link :to="`/event-detail/`+props.EventId" class="router-link">
+            <EventWidget :eventData="
           {
             id: 1002,
             event_title: eventData.event_title,
@@ -50,6 +51,7 @@ const eventData = data.find((d) => d.id === props.EventId)
             sns_instagram: eventData.sns_instagram,
             sns_website: eventData.sns_website
           }"/>
+          </router-link>
 
           <EventWidget v-for="d in data" :key="d.key" :eventData="d"/>
 
@@ -167,6 +169,10 @@ const eventData = data.find((d) => d.id === props.EventId)
   .root-wrapper {
     font-size: 0.7rem;
   }
+}
+
+.router-link{
+  text-decoration: none;
 }
 
 </style>
