@@ -42,15 +42,17 @@ const eventData = data.find((d) => d.event_id === props.EventId)
       <div class="SNS">
         <!--        画像のダウンロード元のサイト（https://icon-rainbow.com/tag/sns/）-->
         <a :href="`https://facebook.com/` + eventData.sns_facebook" class="SNS-icon c-btn" target="_blank"
+           v-show="eventData.sns_facebook"
            rel="noopener noreferrer">
           <img src="@/assets/facebook_icon.png">
         </a>
         <a :href="`https://twitter.com/` + eventData.sns_twitter" class="SNS-icon c-btn" target="_blank"
+           v-show="eventData.sns_twitter"
            rel="noopener noreferrer">
           <img src="@/assets/twitter_icon.png">
         </a>
-        <a :href="`https://instagram.com/` + eventData.sns_instagram" class="SNS-icon c-btn"
-           target="_blank" rel="noopener noreferrer">
+        <a :href="`https://instagram.com/` + eventData.sns_instagram" class="SNS-icon c-btn" target="_blank"
+           v-show="eventData.sns_instagram" rel="noopener noreferrer">
           <img src="@/assets/instagram_icon.png">
         </a>
       </div>
