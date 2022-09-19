@@ -1,7 +1,9 @@
 <script>
 import WelcomeModal from "@/components/WelcomeModal";
 import HeaderTest1 from "@/components/HeaderTest1";
-
+window.onbeforeunload = function () {
+  return '現在のデータは保存されません。ページを離れてもよろしいですか?';
+};
 export default {
   components: {HeaderTest1, WelcomeModal},
   data: () => ({

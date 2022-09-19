@@ -2,9 +2,7 @@
   <router-view/>
 </template>
 <script>
-window.onbeforeunload = function () {
-  return '現在のデータは保存されません。ページを離れてもよろしいですか?';
-};
+
 export default {
 
 }
