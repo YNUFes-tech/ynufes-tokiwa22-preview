@@ -1,7 +1,10 @@
 runtime: nodejs16
 env: standard
 handlers:
-  - url: /preview(\/event-detail|\/event-list|/|)
+  - url: /preview(\/|)
+    static_files: dist/index.html
+    upload: dist/index.html
+  - url: /preview(\/event-detail|\/event-list)(.*)
     static_files: dist/index.html
     upload: dist/index.html
   - url: /preview/(.*)

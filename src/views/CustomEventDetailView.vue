@@ -1,15 +1,15 @@
 <script setup>
 import {defineProps} from "vue";
-import data from "@/assets/eventdata.json";
+import data from "@/assets/event_data.json";
 import HeaderTest2 from "@/components/HeaderTest2";
 
-const props=defineProps({
+const props = defineProps({
   EventId: {
     type: String,
     required: true
   }
 })
-  const eventData = data.find((d) => d.id === props.EventId)
+const eventData = data.find((d) => d.event_id === props.EventId)
 </script>
 <template>
   <HeaderTest2 :EventId="props.EventId"/>
@@ -21,13 +21,13 @@ const props=defineProps({
         <h1 class="event-title allow-wrap" v-text="eventData.event_title">
         </h1>
         <div class="event-place">
-          日時：全日<br>
-          場所：{{ eventData.event_place_text }}
+          日時：(準備中...)<br>
+          場所：(準備中...)
         </div>
       </div>
       <div class="event-detail-description">
         <div class="event-icon">
-          <img :src="eventData.icon_filename">
+          <img :src="`/preview/icon/`+eventData.event_id+`.webp`">
         </div>
         <div class="event-description">
           <p class="allow-wrap" v-text="eventData.event_description"/>
