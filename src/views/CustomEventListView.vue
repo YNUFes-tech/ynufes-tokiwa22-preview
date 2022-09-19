@@ -1,7 +1,9 @@
 <script setup>
 import {defineProps} from "vue";
-import EventWidget from "@/components/EventWidget";
-import data from "@/assets/eventdata.json";
+import EventWidget from "@/components/EventWidget.vue";
+import EventWidget1 from "@/components/EventWidget1.vue";
+import data from "@/assets/event_data.json";
+import samples from "@/assets/eventdata.json"
 import HeaderTest2 from "@/components/HeaderTest2";
 // eslint-disable-next-line no-unused-vars
 const eventGenre = {
@@ -21,7 +23,7 @@ const props = defineProps({
   }
 })
 
-const eventData = data.find((d) => d.id === props.EventId)
+const eventData = data.find((d) => d.event_id === props.EventId)
 
 </script>
 <template>
@@ -34,16 +36,13 @@ const eventData = data.find((d) => d.id === props.EventId)
       <div class="content-frame">
         <div class="events_block">
           <router-link :to="`/event-detail/`+props.EventId" class="router-link">
-            <EventWidget :eventData="
+            <EventWidget1 :eventData="
           {
-            id: 1002,
+            event_id: eventData.event_id,
             event_title: eventData.event_title,
             event_summary: eventData.event_summary,
             event_description: eventData.event_description,
-            event_place_text: eventData.event_place_text,
-            event_place_id: eventData.event_place_id,
             event_genre_id: eventData.event_genre_id,
-            icon_filename: eventData.icon_filename,
             org_name: eventData.org_name,
             org_description: eventData.org_description,
             sns_twitter: eventData.sns_twitter,
@@ -52,8 +51,7 @@ const eventData = data.find((d) => d.id === props.EventId)
             sns_website: eventData.sns_website
           }"/>
           </router-link>
-
-          <EventWidget v-for="d in data" :key="d.key" :eventData="d"/>
+          <EventWidget v-for="d in samples" :key="d.key" :eventData="d"/>
 
         </div>
       </div>
@@ -171,7 +169,7 @@ const eventData = data.find((d) => d.id === props.EventId)
   }
 }
 
-.router-link{
+.router-link {
   text-decoration: none;
 }
 
