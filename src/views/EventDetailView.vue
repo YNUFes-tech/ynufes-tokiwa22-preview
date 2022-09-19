@@ -7,9 +7,9 @@ import HeaderTest1 from "@/components/HeaderTest1";
   <div class="root-wrapper">
     <div class="event-detail fade-up">
       <div class="event-detail-title">
-        <div class="org-name" v-text="this.$store.state.eventData.org_name">
+        <div class="org-name" v-text="$store.state.eventData.org_name">
         </div>
-        <h1 class="event-title allow-wrap" v-text="this.$store.state.eventData.event_title">
+        <h1 class="event-title allow-wrap" v-text="$store.state.eventData.event_title">
         </h1>
         <div class="event-place">
           日時：全日<br>
@@ -21,13 +21,13 @@ import HeaderTest1 from "@/components/HeaderTest1";
           <img :src="$store.state.imgData.src?$store.state.imgData.src:'./icon/noimage.png'">
         </div>
         <div class="event-description">
-          <p class="allow-wrap" v-text="this.$store.state.eventData.event_description"/>
+          <p class="allow-wrap" v-text="$store.state.eventData.event_description"/>
         </div>
       </div>
       <div class="org-detail-description">
         <h2>団体説明</h2>
         <h3>{{ $store.state.eventData.org_name }}</h3>
-        <p class="allow-wrap" v-text="this.$store.state.eventData.org_description">
+        <p class="allow-wrap" v-text="$store.state.eventData.org_description">
         </p>
       </div>
       <div class="SNS">
